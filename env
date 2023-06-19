@@ -1,0 +1,7 @@
+REACT_APP_GA_TRACKING_ID = UA-269237971-1
+REACT_APP_AZURE_AUTH = https://login.microsoftonline.com/20bf5aa4-356b-4ecb-ab88-0087d54b1cbe    
+REACT_APP_CLIENT_ID = 6dbbd34d-901d-45d6-aeb5-7027bce7db1e
+REACT_APP_REDIRECT_URL = http://localhost:3000
+
+REACT_APP_OKTA_CLIENT_ID = 0oa9ye5qwa351RUuU5d7
+REACT_APP_OKTA_ISSUER = https://dev-76001175.okta.com/oauth2/default
