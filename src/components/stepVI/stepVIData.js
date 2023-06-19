@@ -1,0 +1,55 @@
+export const stepVIData = {
+  english: {
+    header: "Additional Software Support",
+    badgeValue: "Step 6",
+    p1: "Need Additional Applications Support?",
+    p2: "Please review the <u>additional support</u> options below to ensure that nothing is missing from your new computer. If everything is in order, you are ready to return your old computer.",
+    bullet_list: [
+      "Missing Software",
+      "Importing Browser Favorites",
+      "PST Files",
+      "Xerox Printer Setup",
+    ],
+    p3: "Links to the above-mentioned support options",
+    footer_text:
+      "If you encounter any issues completing this step, please contact our Computer Refresh team for support: ",
+    footer_link_text: "​​​​Computer.Refresh@innovapost.com",
+    footer_link_path: "Computer.Refresh@innovapost.com",
+    btnInfo: [
+      { to: "/step5", text: "Previous: Step 5" },
+      { to: "/", text: "Homepage" },
+      { to: "/step7", text: "Step 7" },
+    ],
+    option1: "Missing Software",
+    option2: " Transfer Favorites",
+    option3: "Transfer PST Files",
+    option4: "Xerox Printer Configuration",
+  },
+  french: {
+    header: "Prise en charge d'applications supplémentaires",
+    badgeValue: "Étape 6",
+    p1: "Avez-vous besoin de soutien supplémentaire?",
+    p2: "Veuillez passer en revue les options de <u>soutien supplémentaire</u> ci-dessous. Si aucune d’entre elles ne s’applique, vous pouvez retourner votre ancien ordinateur.",
+    bullet_list: [
+      "Autres applications installées",
+      "Favoris du navigateur",
+      "Fichiers PST (courriels archives)",
+      "Configuration des imprimantes Xerox",
+    ],
+    p3: "Liens au documents mentionnés ci-dessus",
+    footer_text:
+      "Si vous éprouvez des difficultés avec cette étape, écrivez à l’adresse",
+    footer_link_text: "Computer.Refresh@innovapost.com",
+    footer_link_path: "Computer.Refresh@innovapost.com",
+    footer_link_text_e: "pour obtenir de l’aide.",
+    btnInfo: [
+      { to: "/step5", text: "Précédent : Étape 5" },
+      { to: "/", text: "Page d'accueil" },
+      { to: "/step7", text: "Étape 7" },
+    ],
+    option1: "Logiciel manquant",
+    option2: "Transférer les favoris",
+    option3: "Transférer des fichiers PST",
+    option4: "Configuration de l'imprimante Xerox",
+  },
+};

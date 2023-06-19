@@ -1,0 +1,52 @@
+
+@font-face {
+  font-family: "TradeGothicBold", "Roboto";
+  src: local("TradeGothicBold"),
+   url("./utils/fonts/trade-gothic-bold-condensed-20.ttf") format("truetype");
+ }
+
+ @font-face {
+  font-family: "FrutigerLTStd";
+  src: local("FrutigerLTStd"),
+   url("./utils/fonts/FrutigerLTStd-Bold.otf") format("truetype");
+ }
+
+.gothic_bold_condensed {
+  font-family: "TradeGothicBold"; 
+}
+
+.frutiger_bold{
+  font-family: "FrutigerLTStd"; 
+}
+
+.anchor-style{
+  text-decoration: none;
+}
+.bg-color{
+background-color: #0078d4;
+}
+
+.p-datatable .p-datatable-thead > tr > th{
+  background: #0078d4;
+  color: white;
+  
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.header_title{
+  margin-top: -140px;
+  margin-bottom:100px;
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.p-dataview .p-dataview-header{
+  background: #0078d4;
+  color: white;
+}
