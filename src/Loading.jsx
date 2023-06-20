@@ -1,5 +1,4 @@
 import { WaveLoader  } from "react-loaders-kit";
-import Typed from 'react-typed';
 export const Loading = () => {
   const loaderProps = {
     loading: true,
@@ -11,13 +10,7 @@ export const Loading = () => {
     <>
     <div className="center-screen">
     <WaveLoader  {...loaderProps} />
-    <Typed
-    style={{marginTop:"90px", marginLeft:"-63px"}}
-          className="loader-text"
-          strings={["Please wait..."]}
-          typeSpeed={0}
-          backSpeed={0}
-        />
+    <div style={{marginTop:"90px", marginLeft:"-63px"}}>Please wait...</div>
     </div>
     </>
   );
