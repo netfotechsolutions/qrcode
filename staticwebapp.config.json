@@ -5,22 +5,5 @@
     },
     "mimeTypes": {
         ".json": "text/json"
-    },
-    "auth": {
-        "identityProviders": {
-            "customOpenIdConnectProviders": {
-                "okta": {
-                    "registration": {
-                        "clientIdSettingName": "OKTA_ID",
-                        "clientCredential": {
-                            "clientSecretSettingName": "OKTA_SECRET"
-                        },
-                        "openIdConnectConfiguration": {
-                            "wellKnownOpenIdConfiguration": "https://dev-76001175.okta.com/.well-known/openid-configuration"
-                        }
-                    }
-                }
-            }
-        }
     }
 }
