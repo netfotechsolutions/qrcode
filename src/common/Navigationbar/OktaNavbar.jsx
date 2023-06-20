@@ -30,7 +30,7 @@ export const OktaNavBar = () => {
       dispatch(oktaAuthAction(true));
       localStorage.setItem("oktaAuthentication", "true");
     }
-  }, [authState], dispatch);
+  }, [authState, dispatch]);
 
   const items = [
     {
