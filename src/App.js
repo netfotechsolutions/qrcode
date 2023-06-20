@@ -20,6 +20,7 @@ import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
 import { Security } from "@okta/okta-react";
 import okta_config from "./configurations/okta_config";
 import Routes from "./components/okta/Routes";
+import { Loading } from "./Loading";
 
 const oktaAuth = new OktaAuth(okta_config.oidc);
 function App() {
@@ -28,6 +29,14 @@ function App() {
   const [showLoginModal, setShowLoginModal] = useState(true);
   const [account, setAccount] = useState("");
   const [searchParams] = useSearchParams();
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    let timer = setTimeout(() => setLoaded(true), 3000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   const oktaCallbackUrl = searchParams.get("code");
 
@@ -76,20 +85,29 @@ function App() {
 
   return (
     <>
-      <Login
-        visible={showLoginModal}
-        account={account}
-        onChangeAccount={onChangeAccount}
-      />
-      {account === "okta" ? (
-        <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
-          <Routes />
-        </Security>
-      ) : account === "azure" ? (
-        <AzureAD provider={authProvider} forceLogin={true}>
-          <AzureRoutes />
-        </AzureAD>
-      ) : null}
+      {!loaded ? (
+        <Loading/>
+      ) : (
+        <>
+        <Login
+          visible={showLoginModal}
+          account={account}
+          onChangeAccount={onChangeAccount}
+        />
+          {account === "okta" ? (
+            <Security
+              oktaAuth={oktaAuth}
+              restoreOriginalUri={restoreOriginalUri}
+            >
+              <Routes />
+            </Security>
+          ) : account === "azure" ? (
+            <AzureAD provider={authProvider} forceLogin={true}>
+              <AzureRoutes />
+            </AzureAD>
+          ) : null}
+        </>
+      )}
     </>
   );
 }

@@ -50,3 +50,11 @@ background-color: #0078d4;
   background: #0078d4;
   color: white;
 }
+
+.center-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}

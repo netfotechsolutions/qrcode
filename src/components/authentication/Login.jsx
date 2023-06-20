@@ -13,9 +13,6 @@ export const Login = (props) => {
         closable={false}
         className="w-11 lg:w-6"
       >
-        <span>
-          Please select your organization account from below options to login:
-        </span>
         <div className="card flex justify-content-center mt-6 mb-6">
           <div className="flex flex-wrap gap-3">
             <div className="flex align-items-center">
