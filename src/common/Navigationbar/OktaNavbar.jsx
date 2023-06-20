@@ -15,7 +15,7 @@ export const OktaNavBar = () => {
   const [userInfo, setUserInfo] = useState(null);
   const oktaLogout = async () => oktaAuth.signOut();
   useEffect(() => {
-    if (!authState || !authState.isAuthenticated) {
+    if (!authState?.isAuthenticated) {
       // When user isn't authenticated, forget any user info
       setUserInfo(null);
     } else {
@@ -30,7 +30,7 @@ export const OktaNavBar = () => {
       dispatch(oktaAuthAction(true));
       localStorage.setItem("oktaAuthentication", "true");
     }
-  }, [authState]);
+  }, [authState], dispatch);
 
   const items = [
     {

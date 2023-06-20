@@ -18,11 +18,10 @@ export const RequiredAuth = () => {
       oktaAuth.setOriginalUri(originalUri);
       oktaAuth.signInWithRedirect();
     }
-  }, [oktaAuth, !!authState, authState?.isAuthenticated]);
+  }, [oktaAuth, authState, authState?.isAuthenticated]);
 
-  if (!authState || !authState?.isAuthenticated) {
+  if (!authState?.isAuthenticated) {
     return <></>;
   }
-
   return <Outlet />;
 };

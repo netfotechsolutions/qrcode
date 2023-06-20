@@ -41,6 +41,7 @@ function App() {
   const azureToken = sessionStorage.getItem(
     `msal.${process.env.REACT_APP_CLIENT_ID}.idtoken`
   );
+  const azure_acces_token = new URLSearchParams(window.location.hash).get("#id_token");
   const azureTokenLocal = localStorage.getItem(
     `msal.${process.env.REACT_APP_CLIENT_ID}.idtoken`
   );
@@ -54,7 +55,8 @@ function App() {
     if (
       azureToken ||
       azureTokenLocal ||
-      azurelocalflag === "true"
+      azurelocalflag === "true" ||
+      azure_acces_token
     ) {
       setShowLoginModal(false);
       setAccount("azure");
@@ -66,7 +68,7 @@ function App() {
       setShowLoginModal(false);
       setAccount("okta");
     }
-  });
+  },[azure_acces_token, azureToken, azureTokenLocal, azurelocalflag, oktaCallbackUrl, oktaAuthSate, oktaAuthentication]);
 
   const onChangeAccount = (radioVal) => {
     setAccount(radioVal);
