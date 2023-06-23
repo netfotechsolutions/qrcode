@@ -14,7 +14,7 @@ export const Header = (props) => {
       >
         <div>
           <Badge
-            className="border-noround pl-4 pr-4 mt-6 lg:mt-8 md:mt-8"
+            className="border-noround bg-color pl-4 pr-4 mt-6 lg:mt-8 md:mt-8"
             value={props.badgeValue}
           ></Badge>
           <div className="gothic_bold_condensed text-white text-5xl font-semibold mt-4 md:mt-4 lg:mt-6">

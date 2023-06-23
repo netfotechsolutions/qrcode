@@ -4,7 +4,7 @@ export const Loading = () => {
     loading: true,
     size: 45,
     duration: 0.6,
-    colors: ['#5e22f0']
+    colors: ['#0078d4']
   };
   return (
     <>

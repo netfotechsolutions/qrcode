@@ -60,7 +60,7 @@ background-color: #0078d4;
 }
 
 .p-dialog .p-dialog-header{
-  background-color: #5e22f0 !important;
+  background-color: #0078d4 !important;
   color:white !important;
 }
 
@@ -71,3 +71,9 @@ background-color: #0078d4;
 .p-dialog .p-dialog-header-icon{
   color:white !important
 }
+
+.p-button:hover {
+  background-color: #0078d4 !important;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  border-color: #0078d4 !important;
+  }

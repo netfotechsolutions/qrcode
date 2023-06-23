@@ -24,11 +24,10 @@ export const DialogWrapper = ({ oncloseDialog }) => {
   const footerContent = (
     <div>
       <Button
-        className="w-full"
+        className="w-full bg-color border-noround"
         label="OK"
         icon="pi pi-check"
         onClick={() => handleOnHide()}
-        autoFocus
       />
     </div>
   );
