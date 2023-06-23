@@ -58,3 +58,16 @@ background-color: #0078d4;
   text-align: center;
   min-height: 100vh;
 }
+
+.p-dialog .p-dialog-header{
+  background-color: #5e22f0 !important;
+  color:white !important;
+}
+
+.p-dialog .p-dialog-titlebar-close{
+  color:white !important
+}
+
+.p-dialog .p-dialog-header-icon{
+  color:white !important
+}

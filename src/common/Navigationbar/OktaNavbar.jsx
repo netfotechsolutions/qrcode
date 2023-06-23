@@ -1,19 +1,32 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Menubar } from "primereact/menubar";
 import { DialogWrapper } from "../dialog/DialogWrapper";
 import { useNavigate } from "react-router-dom";
 import { useOktaAuth } from "@okta/okta-react";
 import { oktaAuthAction } from "../../stores/actions/authAction";
 import { useDispatch } from "react-redux";
+import { navBarData } from "./navigationBarData";
 
 export const OktaNavBar = () => {
+  const language = useSelector((state) => state.language.language);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { authState, oktaAuth } = useOktaAuth();
   const [showLanguageDialog, setShowLanguageDialog] = useState(false);
+  const [content, setContent] = useState("");
 
   const [userInfo, setUserInfo] = useState(null);
   const oktaLogout = async () => oktaAuth.signOut();
+
+  useEffect(()=>{
+    if (language.toLowerCase() === "english") {
+      setContent(navBarData.english);
+    } else if (language.toLowerCase() === "french") {
+      setContent(navBarData.french);
+    }
+  }, [language])
+
   useEffect(() => {
     if (!authState?.isAuthenticated) {
       // When user isn't authenticated, forget any user info
@@ -34,74 +47,74 @@ export const OktaNavBar = () => {
 
   const items = [
     {
-      label: "Home",
+      label: content.home,
       icon: "pi pi-fw pi-home",
       command: () => {
         navigate("/");
       },
     },
     {
-      label: "Select Language",
+      label: content.selectLanguage,
       icon: "pi pi-fw pi-language",
       command: () => {
         setShowLanguageDialog(true);
       },
     },
     {
-      label: "Navigation Menu",
+      label: content.navigationMenu,
       icon: "pi pi-fw pi-arrow-right-arrow-left",
       items: [
         {
-          label: "Checklist",
-          icon: "pi pi-fw pi-align-left",
+          label: content.checkList,
+          icon: "pi pi-fw pi-align-justify",
           command: () => {
             navigate("/checklist");
           },
         },
         {
-          label: "Step 1",
-          icon: "pi pi-fw pi-align-right",
+          label:  content.step1,
+          icon: "pi pi-fw pi-align-justify",
           command: () => {
             navigate("/step1");
           },
         },
         {
-          label: "Step 2",
-          icon: "pi pi-fw pi-align-center",
+          label: content.step2,
+          icon: "pi pi-fw pi-align-justify",
           command: () => {
             navigate("/step2");
           },
         },
         {
-          label: "Step 3",
+          label:  content.step3,
           icon: "pi pi-fw pi-align-justify",
           command: () => {
             navigate("/step3");
           },
         },
         {
-          label: "Step 4",
+          label: content.step4,
           icon: "pi pi-fw pi-align-justify",
           command: () => {
             navigate("/step4");
           },
         },
         {
-          label: "Step 5",
+          label: content.step5,
           icon: "pi pi-fw pi-align-justify",
           command: () => {
             navigate("/step5");
           },
         },
         {
-          label: "Step 6",
+          label: content.step6,
           icon: "pi pi-fw pi-align-justify",
           command: () => {
             navigate("/step6");
           },
         },
         {
-          label: "Step 7",
+          label: content.step7,
           icon: "pi pi-fw pi-align-justify",
           command: () => {
             navigate("/step7");
@@ -110,13 +123,13 @@ export const OktaNavBar = () => {
       ],
     },
     {
-      label: `Welcome
+      label: `${content.welcome} :
         ${userInfo?.name}`,
       icon: "pi pi-fw pi-user",
       visible: authState?.isAuthenticated ? true : false,
     },
     {
-      label: "Logout",
+      label: content.logout,
       icon: "pi pi-fw pi-power-off",
       visible: authState?.isAuthenticated ? true : false,
       command: () => {
