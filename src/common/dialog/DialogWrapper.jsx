@@ -26,7 +26,6 @@ export const DialogWrapper = ({ oncloseDialog }) => {
       <Button
         className="w-full bg-color border-noround"
         label="OK"
-        icon="pi pi-check"
         onClick={() => handleOnHide()}
       />
     </div>
